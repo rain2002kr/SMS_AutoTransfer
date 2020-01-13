@@ -1,5 +1,7 @@
 package com.example.sms_autotransfer
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -23,23 +25,54 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        button.setOnClickListener({
+            val intents = Intent(this, ItemLogActivity::class.java)
+            intents.flags=(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivityForResult(intents, 101)
+
+        })
         container_main.adapter = adapter
         adapter.setItemClickListener(object  : MainViewAdapter.ItemClickListener{
             val contexts = applicationContext
 
             override fun onClick(view: View, position: Int) {
                 Log.d("SSS", "${position}번 리스트 선택")
-                Toast.makeText(contexts, "Clicked: ", Toast.LENGTH_SHORT).show()
+                Toast.makeText(contexts, "Clicked: \"${position}", Toast.LENGTH_SHORT).show()
+                screenChagne(position)
             }
         })
 
 
-        //container_main.setHasFixedSize(true)
-
-
+        container_main.setHasFixedSize(true)
         container_main.layoutManager = GridLayoutManager(this,1,RecyclerView.VERTICAL,false)
 
-
-
     }
+
+    fun screenChagne(pos:Int){
+
+        when(pos){
+            0 -> {
+                val intent = Intent(this, ItemRegisterActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+                startActivity(intent)
+            }
+            1 -> {
+                val intent = Intent(this, ItemLogActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+                startActivity(intent)
+            }
+            2 -> {
+                val intent = Intent(this, SMSActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+                startActivity(intent)
+            }
+        }
+    }
+
+
 }
+
