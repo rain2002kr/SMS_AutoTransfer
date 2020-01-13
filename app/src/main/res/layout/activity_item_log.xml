@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".ItemLogActivity">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="195dp"
+        android:layout_height="218dp"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="371dp"
+        tools:srcCompat="@tools:sample/avatars[0]" />
 </androidx.constraintlayout.widget.ConstraintLayout>

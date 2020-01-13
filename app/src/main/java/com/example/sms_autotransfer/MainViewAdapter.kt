@@ -6,9 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.main_item.view.*
-import kotlinx.android.synthetic.main.main_screen_view.view.*
-import kotlinx.android.synthetic.main.main_screen_view.view.imageView
-import kotlinx.android.synthetic.main.main_screen_view.view.textView
 
 class MainViewAdapter (val context: Context , val intId:Int, val list:List<MainViewModel>): RecyclerView.Adapter<MainViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
