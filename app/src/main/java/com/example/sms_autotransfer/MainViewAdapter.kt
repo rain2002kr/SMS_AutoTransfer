@@ -42,8 +42,8 @@ class MainViewAdapter (val context: Context , val intId:Int, val list:List<MainV
         })
 
 
-
-
-
     }
 }
+
+
+
