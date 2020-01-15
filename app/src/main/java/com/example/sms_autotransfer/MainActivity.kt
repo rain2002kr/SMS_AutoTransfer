@@ -13,16 +13,16 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     val list = listOf<MainViewModel>(
-        MainViewModel(R.drawable.network, "전송 리스트","자동전송 정보를 저장하는 화면입니다."),
-        MainViewModel(R.drawable.log, "전송 내역","자동전송된 문자 내역을 확인하는 화면입니다."),
-        MainViewModel(R.drawable.sms, "문자 보내기","문자를 전송할수있는 화면입니다."),
-        MainViewModel(R.drawable.info, "정보","버전을 확인 할수있습니다.")
+        MainViewModel(R.drawable.network, "전송 리스트","자동 문자 전송 정보를 저장하는 화면입니다."),
+        MainViewModel(R.drawable.log, "전송 내역","자동 전송된 문자 내역을 확인하는 화면입니다."),
+        MainViewModel(R.drawable.sms, "문자 보내기","문자를 전송 할수 있는 화면입니다."),
+        MainViewModel(R.drawable.info, "정보","버전을 확인 할수 있습니다.")
     )
     val adapter = MainViewAdapter(this, R.layout.main_item, list)
     val versionInfo = mapOf(
                                         "version" to "1.0.0",
-                                        "update" to "2020.01.14",
-                                         "comment" to "update UI"
+                                        "update" to "2020.01.15",
+                                         "comment" to "Update logView"
 
 
     )
